@@ -1,10 +1,15 @@
 import cv2
 
 model = cv2.face.LBPHFaceRecognizer_create()
-model.read('/home/pi/Documents/raspi-AIoT-test/model/aiot-faces.data')
+model.read(
+    '/home/pi/Documents/raspi-AIoT-test/model/aiot-faces.data'
+    )
 print('load training data done')
 
-faceCascade = cv2.CascadeClassifier('/home/pi/opencv/opencv-master/data/haarcascades/haarcascade_frontalface_alt2.xml')
+faceCascade = cv2.CascadeClassifier(
+    '/home/pi/opencv/opencv-master/data/haarcascades/haarcascade_frontalface_alt2.xml'
+    )
+
 cap = cv2.VideoCapture(0)
 cv2.namedWindow('video', cv2.WINDOW_AUTOSIZE)
 

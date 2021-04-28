@@ -8,12 +8,6 @@ pathf = '/home/pi/opencv/opencv-master/data/haarcascades/haarcascade_frontalface
 
 faceCascade = cv2.CascadeClassifier(pathf)
 
-#pathe = '/home/pi/opencv/data/haarcascades/haarcascade_eye.xml'
-#eyeCascade = cv2.CascadeClassifier(pathe)
-
-#patheg = '/home/pi/opencv/data/haarcascades/haarcascade_eye_tree_eyeglasses.xml'
-#eyeglassesCascade = cv2.CascadeClassifier(patheg)
-
 cap = cv2.VideoCapture(0)
 
 while (cap.isOpened()):
@@ -29,6 +23,5 @@ while (cap.isOpened()):
     if c==27: #esc key
         break
     
-cv2.waitKey()
 cap.release()
 cv2.destroyAllWindows()

@@ -1,22 +1,11 @@
 import cv2
 import time
 
-'''
-#coffe model
-net = cv2.dnn.readNet(
-    '/home/pi/opencv/opencv-master/samples/dnn/face_detector/deploy.prototxt',
-    '/home/pi/opencv/opencv-master/samples/dnn/face_detector/res10_300x300_ssd_iter_140000_fp16.caffemodel')
 
-#Tensorflow model
+#open model zoo
 net = cv2.dnn.readNet(
-    '/home/pi/opencv/opencv-master/samples/dnn/face_detector/opencv_face_detector.pbtxt',
-    '/home/pi/opencv/opencv-master/samples/dnn/face_detector/opencv_face_detector_uint8.pb')
-'''
-
-#intel model
-net = cv2.dnn.readNet(
-    '/home/pi/Documents/build/open_model_zoo/tools/downloader/intel/face-detection-adas-0001/FP16/face-detection-adas-0001.xml',
-    '/home/pi/Documents/build/open_model_zoo/tools/downloader/intel/face-detection-adas-0001/FP16/face-detection-adas-0001.bin'
+    '/home/pi/Documents/build/open_model_zoo/tools/downloader/intel/face-detection-retail-0004/FP16/face-detection-retail-0004.xml',
+    '/home/pi/Documents/build/open_model_zoo/tools/downloader/intel/face-detection-retail-0004/FP16/face-detection-retail-0004.bin'
     )
 
 net.setPreferableBackend(cv2.dnn.DNN_BACKEND_INFERENCE_ENGINE)
@@ -58,4 +47,3 @@ while True:
             cap.release()
             cv2.destroyAllWindows()
             break
-        
